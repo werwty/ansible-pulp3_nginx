@@ -1,0 +1,25 @@
+---
+- name: Install uwsgi
+  dnf:
+    name: uwsgi
+    state: present
+
+- name: Install uwsgi python plugin
+  dnf:
+    name: uwsgi-plugin-python
+    state: present
+
+- name: Install systemd logger
+  dnf:
+    name: uwsgi-logger-systemd
+    state: present
+
+#mkdir /etc/uwsgi/vassals
+
+
+- name: Copy Pulp API uwsgi config
+  template:
+    src: pulp_uwsgi.ini
+    dest: "/etc/uwsgi/apps-enabled/pulp_api.ini"
+  notify:
+     - restart uwsgi

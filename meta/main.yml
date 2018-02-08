@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Pulp Team
+  description: A role that installs and configures nginx for pulp3
+  issue_tracker_url: https://pulp.plan.io/projects/external/issues/new
+  license: GPLv2
+  min_ansible_version: 2.2
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  galaxy_tags:
+    - pulp3
+    - pulpcore
+  dependencies: []

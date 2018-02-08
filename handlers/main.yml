@@ -1,0 +1,11 @@
+
+---
+- name: restart uwsgi
+  service:
+    name: uwsgi
+    state: restarted
+
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded
